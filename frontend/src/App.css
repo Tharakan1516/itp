@@ -2,3 +2,30 @@
   text-align: center;
   height: 100%;
 }
+
+.addinventory{
+  background: white;
+  border-radius: 20px;
+  padding: 30px 80px;
+  max-width :800px;
+  margin: 0 auto;
+  box-shadow: 0 15px 16px;
+  background: #AAFFA9;
+  background: -webkit-linear-gradient(to right, #11FFBD, #AAFFA9);
+  background: linear-gradient(to right, #11FFBD, #AAFFA9);
+
+}
+
+.updateinventory{
+  background: white;
+  border-radius: 20px;
+  padding: 30px 80px;
+  max-width :800px;
+  margin: 0 auto;
+  box-shadow: 0 15px 16px;
+  background: #AAFFA9;
+  background: -webkit-linear-gradient(to right, #11FFBD, #AAFFA9);
+  background: linear-gradient(to right, #11FFBD, #AAFFA9);
+
+
+}

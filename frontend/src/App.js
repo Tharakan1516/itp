@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 
+
 import {
   BrowserRouter as Router,
   Route,
@@ -10,8 +11,17 @@ import {
 
 import Login from "./account management/pages/Login";
 import MainDashboard from "./shared/pages/MainDashboard";
+import AddGenInventory from "./Inventory management/AddGenInventory";
+import AddSurInventory from "./Inventory management/AddSurInventory";
+import ViewGeneralInventory from "./Inventory management/ViewGeneralInventory";
+import ViewSurgicalInventory from "./Inventory management/ViewSurgicalInventory";
+import Head from './Inventory management/Navbar'
+import Inventory from "./Inventory management/Inventory";
+import UpdateSurgicalInventory from "./Inventory management/UpdateSurgicalInventory"
 
+import UpdateGeneralInventory from "./Inventory management/UpdateGeneralInventory"
 import UserContext from "./context/UserContext";
+import ViewInventory from "./Inventory management/Inventory";
 
 const App = () => {
   const [userData, setUserData] = useState({
@@ -49,9 +59,29 @@ const App = () => {
     <Router>
       <UserContext.Provider value={{ userData, setUserData }}>
         <Switch>
-          <Route path="/" exact component={Login} />
-          <Redirect from="/redirect_dashboard" to="/main-dashboard" />
-          <Route path="/main-dashboard" exact component={MainDashboard} />
+
+         <Route path="/updategen/:id" exact component={UpdateGeneralInventory} />  
+        <Route path="/" exact component={ViewInventory} />
+
+        <Route path="/addgen" exact component={AddGenInventory} />
+
+          <Route path="/addsurg" exact component={AddSurInventory} />
+
+          <Route path="/Surgtable" exact component={ViewSurgicalInventory} />
+
+          <Route path="/Surgical" exact component={ViewSurgicalInventory} />
+
+          <Route path="/General" exact component={ViewGeneralInventory} />
+
+          <Route path="/updateSurgical/:id" exact component={UpdateSurgicalInventory} />
+          
+
+          <Route path="/gentable" exact component={ViewGeneralInventory} />
+
+          <Route path="/addsurg" exact component={AddSurInventory} />
+          <Route path="/addgen" exact component={AddGenInventory} />
+
+      
         </Switch>
       </UserContext.Provider>
     </Router>
@@ -59,3 +89,4 @@ const App = () => {
 };
 
 export default App;
+
